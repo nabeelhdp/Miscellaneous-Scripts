@@ -12,6 +12,7 @@ hc = HiveContext(sc)
 tablepath = sys.argv[1]
 
 # Pass HDFS path to table and HDFS path to partition to limit merge activity to particular partition
+filepath = ""
 if len(sys.argv) > 1:
   filepath = sys.argv[2]
 else:
