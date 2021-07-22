@@ -7,6 +7,8 @@ from functools import reduce
 from pyspark.sql import DataFrame
 
 tablename=sys.argv[1]
+
+# Retrieve file list in folder via hdfs command in bash 
 args = "hdfs dfs -ls -R "+tablename+" | grep orc$ |awk '{print $NF}'"
 proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 tbl_output, s_err = proc.communicate()
